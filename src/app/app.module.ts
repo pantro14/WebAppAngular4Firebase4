@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FileManagerComponent } from './file-manager/file-manager.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    FileManagerComponent
   ],
   imports: [
     BrowserModule,
