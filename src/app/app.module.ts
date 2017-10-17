@@ -7,6 +7,7 @@ import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthService } from './providers/auth.service';
+import { FileService } from './providers/file.service';
 
 import { environment } from '../environments/environment';
 
@@ -35,7 +36,7 @@ const routes: Routes = [
     AngularFireAuthModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService],
+  providers: [AuthService, FileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FileService } from '../providers/file.service';
+
 @Component({
   selector: 'app-file-manager',
   templateUrl: './file-manager.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FileManagerComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public fileService: FileService) { }
+ 
   ngOnInit() {
+  	this.doBrowseFiles();
+  }
+
+  doBrowseFiles(){
+  	this.fileService.browseFolder();
   }
 
 }
