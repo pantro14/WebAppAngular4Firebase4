@@ -1,14 +1,14 @@
 export class Firmware {
-  fileName:String;
-  extension:String;
-  downloadURL:String;
+  fileName:string;
+  extension:string;
+  downloadURL:string;
   progress:number;
   version: number;
-  versionType: String;
+  versionType: string;
   createdAt: Date;
  
-  constructor(fileName:String, downloadURL?:String, progress?:number, extension?:String,
-     version?: number, versionType?: String) {
+  constructor(fileName:string, downloadURL?:string, progress?:number, extension?:string,
+     version?: number, versionType?: string) {
     this.fileName = fileName;
     this.extension = (extension == undefined ? "" : extension);
     this.downloadURL = downloadURL;

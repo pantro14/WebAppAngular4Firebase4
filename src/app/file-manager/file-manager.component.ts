@@ -15,6 +15,8 @@ export class FileManagerComponent implements OnInit {
 
   selectedFile: FileList;
   currentFile: FileManager;
+  fileName: string;
+  fileProggress: number;
 
   constructor(public fileService: FileService) { }
  
@@ -32,6 +34,7 @@ export class FileManagerComponent implements OnInit {
   	this.currentFile = new FileManager(file, firmware);
   	let fileEnv = FileEnvironment.archived;
   	let peripheral = "BushidoSmartPeripheral";
+
   	this.fileService.uploadFile(fileEnv, peripheral, this.currentFile);
   }
 
