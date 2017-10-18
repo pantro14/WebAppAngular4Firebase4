@@ -1,3 +1,14 @@
-<p>
-  file-manager works!
-</p>
+<div *ngIf="selectedFile">
+    <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
+    Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+</div>
+<div class="box">
+    <label>
+       <input type="file" (change)="detectFiles($event)">
+    </label>
+    <button
+            [disabled]="!selectedFile"
+            (click)="doUploadFile()">
+      Upload Single
+    </button>
+</div>
