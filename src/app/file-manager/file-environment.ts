@@ -1,6 +1,6 @@
 export const FileEnvironment = {
   archived: "Archived",
-  production: "production",
-  staging: "staging",
+  production: "Production",
+  staging: "Staging",
   uploaded: "uploaded"
 };

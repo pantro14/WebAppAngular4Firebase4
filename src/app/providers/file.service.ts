@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth'
-import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { FileManager } from '../file-manager/file-manager';
 import { Firmware } from '../models/firmware';
@@ -12,7 +11,7 @@ import 'firebase/storage';
 export class FileService {
 
   firmware: Firmware;
-  constructor(public afAuth: AngularFireAuth, private db: AngularFireDatabase) { }
+  constructor(public afAuth: AngularFireAuth) { }
   
   //constructor(public afAuth: AngularFireAuth) { }
 
@@ -42,7 +41,12 @@ export class FileService {
   	dataBaseRef.push(firmwareItem, (onComplete) =>  { // task completed on server
         console.log("firmware added with key: "+ dataBaseRef.key);
     });
-    //this.db.list(`${basePath}/`).push(firmwareItem);
+  }
+
+  public loadPeripherals(fileEnv:string){
+  	let dataBaseRef = firebase.database().ref();
+  	let fileEnvironmentRef = dataBaseRef.child(fileEnv);
+  	return fileEnvironmentRef.once('value');  	
   }
 
 }

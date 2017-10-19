@@ -12,3 +12,11 @@
       Upload Single
     </button>
 </div>
+<hr>
+<label> Select the Bucket: </label><br>
+<select [ngModel]="fileEnvList.production" (ngModelChange)="doLoadPeripheral($event)">
+  <option >{{ fileEnvList.production }}</option>
+  <option >{{ fileEnvList.archived }}</option>
+  <option >{{ fileEnvList.staging }}</option>
+  <option >{{ fileEnvList.uploaded }}</option>
+</select>

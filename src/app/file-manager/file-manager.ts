@@ -9,12 +9,4 @@ export class FileManager {
     this.file = file;
     this.firmware = firmware;
   }
-
-  // get firmware():Firmware {
-  //    return this._firmware;
-  // }
-
-  // get file():File {
-  //    return this._file;
-  // }
 }

@@ -17,29 +17,4 @@ export class Firmware {
     this.versionType = (versionType == undefined ? "" : versionType);
     this.createdAt = new Date();
   }
-
-
-/*  set setFileName(fileName:String) {
-        this.fileName = fileName;
-  }
-
-  get getFileName():String {
-     return this.fileName;
-  }
-
-  set setDownloadURL(downloadURL:String) {
-        this.downloadURL = downloadURL;
-  }
-
-  get getDownloadURL():String {
-     return this.downloadURL;
-  }
-
-  set setProgress(progress:number) {
-        this.progress = progress;
-  }
-
-  get getProgress():number {
-     return this.progress;
-  }*/
 }
