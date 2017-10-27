@@ -7,6 +7,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {NgfbauthMaterialModule} from './ngfbauth-material/ngfbauth-material.module';
+
+
 import { AuthService } from './providers/auth.service';
 import { FileService } from './providers/file.service';
 
@@ -16,6 +21,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FileManagerComponent } from './file-manager/file-manager.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -27,16 +33,19 @@ const routes: Routes = [
     AppComponent,
     LoginPageComponent,
     HomePageComponent,
-    FileManagerComponent
+    FileManagerComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase), 
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgfbauthMaterialModule
   ],
   providers: [AuthService, FileService],
   bootstrap: [AppComponent]
